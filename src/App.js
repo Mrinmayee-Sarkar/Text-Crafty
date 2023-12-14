@@ -1,9 +1,9 @@
 import PageInterface from "./Screen/PageInterface"
 import StateEg from "./Screen/StateEg";
-//import About from "./Screen/About";
+import About from "./Screen/About";
 import { useState } from "react";
 import Alert from "./Screen/Alert";
-//import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 
 
 function App() {
@@ -21,12 +21,12 @@ function App() {
   }
 
   const handleSwitch=()=>{
-    if (text==="Enable Dark Mode"){
+    if (color==="light"){
       setColor("dark")
       setText("Enable Light Mode")
       showAlert("Dark Mode Activated","success")
       document.body.style.backgroundColor="#042743"
-      //setBColor("red")
+    
    }
     else{
       setColor("light")
@@ -36,13 +36,9 @@ function App() {
     }
   }
 
-  
-
-  
-
-  return (
+return (
     <>
-      {/*<Router>*/}
+      <Router>
      
       <PageInterface 
       title="TextCraftify"  
@@ -55,17 +51,14 @@ function App() {
       
       <Alert alert={alert}/>
       <div className="container my-5">
-      <StateEg heading="Enter the text to analyze" colors={color} showAlert={showAlert} />
-
-      
-      {/*<Routes>
+     <Routes>
         <Route element={<About colors={color}/>} path="/about"></Route>
-        <Route element={<StateEg heading="Enter the text to analyze" colors={color} showAlert={showAlert} />} path="/">
+        <Route element={<StateEg heading="Enter the text to analyze" colors={color} showAlert={showAlert} />} path="/stateeg">
         </Route> 
-  </Routes>*/}
+  </Routes>
         </div>
    
-    {/*</Router>*/}
+    </Router>
     </>
   )
     
