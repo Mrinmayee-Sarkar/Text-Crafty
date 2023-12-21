@@ -3,6 +3,7 @@ export default function PageInterface(props){
 
  
     return( 
+      <>
     <nav className={`navbar navbar-expand-lg navbar-${props.colors} bg-${props.colors}`} >
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">{props.title}</Link>
@@ -25,5 +26,6 @@ export default function PageInterface(props){
        
       </div>
   </div>
-</nav>)
+</nav>
+</>)
 }

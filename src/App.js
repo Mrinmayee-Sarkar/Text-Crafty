@@ -3,7 +3,6 @@ import StateEg from "./Screen/StateEg";
 import About from "./Screen/About";
 import { useState } from "react";
 import Alert from "./Screen/Alert";
-//import GetStarted from "./Screen/GetStarted";
 import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 
 
@@ -36,7 +35,6 @@ function App() {
       document.body.style.backgroundColor="white"
     }
   }
-
 return (
     <>
       <Router>
@@ -49,8 +47,8 @@ return (
       colors={color} 
       texts={text} 
       handleSwitch={handleSwitch}
-      
-      />
+ />
+       
      
       
       <Alert alert={alert}/>

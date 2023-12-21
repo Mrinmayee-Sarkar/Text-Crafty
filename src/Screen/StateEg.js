@@ -3,6 +3,8 @@ import { useState } from "react";
 export default function StateEg(props){
    
     const [text,setText]=useState("")
+    const[sty,setSty]=useState("normal")
+    const[btn1,setBtn1]=useState("Bold")
 
   const handleExtraspaces=()=>{
   let a=(text.split(/[ ]+/).join(' '))
@@ -33,6 +35,24 @@ export default function StateEg(props){
       props.showAlert("Converted to Sentance Case","success")
     }
 
+    const handleBold=()=>{
+      if(btn1==="Bold")
+      {
+        setSty("bolder")
+        setBtn1("Normal")
+        props.showAlert("Converted to Bold","success")
+      }
+      else{
+        
+        setSty("normal")
+        setBtn1("Bold")
+        props.showAlert("Converted to Normal","success")
+      }
+      
+    
+      
+    }
+
     const handleReverse=()=>{
       let a=(text.split('').reverse().join(''))
       console.log(a)
@@ -48,21 +68,22 @@ export default function StateEg(props){
         <h2>{props.heading}</h2>
     <div className="mb-3">
   <textarea className="form-control" placeholder="Type Something" id="myBox" rows="8"
-   onChange={(event)=>setText(event.target.value)} value={text} style={{backgroundColor: props.colors==="dark"?"#13466e":"white", color:props.colors==="dark"?"white":"black"}} ></textarea> </div>
+   onChange={(event)=>setText(event.target.value)} value={text} style={{backgroundColor: props.colors==="dark"?"#13466e":"white", color:props.colors==="dark"?"white":"black",fontWeight:sty}} ></textarea> </div>
   <button disabled={text.length===0} type="button"  className="btn btn-primary mx-4 my-1" onClick={handleUpper}>Upper case</button>
   <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleloLower}> Lower case</button>
   <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleSimple}>Sentence Case</button>
   <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleReverse}>Reverse Case</button>
   <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleExtraspaces}>Remove Extra Spaces</button>
   <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleCopy}>Copy Text</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4" onClick={handleBold}>{btn1}</button>
   <button disabled={text.length===0} type="button" className="btn btn-primary mx-4" onClick={handleClear}>Clear Text</button> </div>
   
   <div className="container my-3">
     <h2>Text Analysis</h2>
-    <b >Total Words: {text.split(' ').filter(value => value !== "").length}  Total Characters: {text.trim().length}  No. of Alphabetic Characters: {alphachar} </b><br></br><br></br>
+    <b >Total Words: {text.split(/\s+/).filter(value => value !== "").length}  Total Characters: {text.trim().length}  No. of Alphabetic Characters: {alphachar} </b><br></br><br></br>
     
     <h2>Preview</h2>
-    <p>{text.length===0?"Type something above to preview here":text}</p>
+    <p style={{fontWeight:sty}}>{text.length===0?"Type something above to preview here":text}</p>
     <b>{0.008*text.split(' ').filter(value => value !== "").length} minutes to read</b>
 
 
