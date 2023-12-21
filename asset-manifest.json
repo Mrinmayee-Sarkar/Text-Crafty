@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Text-Crafty/static/css/main.e6c13ad2.css",
+    "main.js": "/Text-Crafty/static/js/main.381f0f47.js",
+    "static/js/787.d4aba7ab.chunk.js": "/Text-Crafty/static/js/787.d4aba7ab.chunk.js",
+    "index.html": "/Text-Crafty/index.html",
+    "main.e6c13ad2.css.map": "/Text-Crafty/static/css/main.e6c13ad2.css.map",
+    "main.381f0f47.js.map": "/Text-Crafty/static/js/main.381f0f47.js.map",
+    "787.d4aba7ab.chunk.js.map": "/Text-Crafty/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.381f0f47.js"
+  ]
+}
