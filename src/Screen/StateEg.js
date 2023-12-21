@@ -43,19 +43,19 @@ export default function StateEg(props){
     let alphachar=text.split("").filter(value =>( (value >= "A" && value<="Z")||(value >= "a" && value<="z"))&&(value!=="")).length
   
   return(<>
-    <div style={{color:props.colors==="dark"?"white":"dark"}}>
+    <div style={{color:props.colors==="dark"?"white":"black"}}>
         <div className="container"  >
         <h2>{props.heading}</h2>
     <div className="mb-3">
   <textarea className="form-control" placeholder="Type Something" id="myBox" rows="8"
-   onChange={(event)=>setText(event.target.value)} value={text} style={{backgroundColor: props.colors==="dark"?"grey":"white", color:props.colors==="dark"?"white":"black"}} ></textarea> </div>
-  <button type="button"  className="btn btn-primary mx-4" onClick={handleUpper}>Upper case</button>
-  <button type="button" className="btn btn-primary mx-4" onClick={handleloLower}> Lower case</button>
-  <button type="button" className="btn btn-primary mx-4" onClick={handleSimple}>Sentence Case</button>
-  <button type="button" className="btn btn-primary mx-4" onClick={handleReverse}>Reverse Case</button>
-  <button type="button" className="btn btn-primary mx-4 my-2" onClick={handleExtraspaces}>Remove Extra Spaces</button>
-  <button type="button" className="btn btn-primary mx-4 my-2" onClick={handleCopy}>Copy Text</button>
-  <button type="button" className="btn btn-primary mx-4" onClick={handleClear}>Clear Text</button> </div>
+   onChange={(event)=>setText(event.target.value)} value={text} style={{backgroundColor: props.colors==="dark"?"#13466e":"white", color:props.colors==="dark"?"white":"black"}} ></textarea> </div>
+  <button disabled={text.length===0} type="button"  className="btn btn-primary mx-4 my-1" onClick={handleUpper}>Upper case</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleloLower}> Lower case</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleSimple}>Sentence Case</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleReverse}>Reverse Case</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleExtraspaces}>Remove Extra Spaces</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4 my-1" onClick={handleCopy}>Copy Text</button>
+  <button disabled={text.length===0} type="button" className="btn btn-primary mx-4" onClick={handleClear}>Clear Text</button> </div>
   
   <div className="container my-3">
     <h2>Text Analysis</h2>
